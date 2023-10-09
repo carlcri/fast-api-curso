@@ -33,7 +33,7 @@ class Movie(BaseModel):
 
 @app.get('/', tags=['home'])
 def message():
-    return HTMLResponse('<h1>Hello World</h1>')
+    return HTMLResponse('<h1>Hello-Cruel-World</h1>')
 
 
 @app.get('/movies', tags=['movies'], response_model=List[Movie], status_code=200)

@@ -1,0 +1,9 @@
+services:
+  my-movie-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+     - .:/my-movie-app
+    ports:
+     - '5000:80' 
