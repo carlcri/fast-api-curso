@@ -15,3 +15,7 @@ docker compose up -d
 ```
 
 Los cambios que realizes dentro del contexto de build, se veran reflejados en la aplicacion. 
+
+Abre una ventana del navegador en el puerto 5000 de tu maquina:
+
+**http://localhost:5000/** 
