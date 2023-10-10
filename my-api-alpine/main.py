@@ -45,9 +45,13 @@ def message():
 
 @app.post('/login', tags=['auth'], status_code=201)
 def login(user: User):
-    user = dict(user)
-    return JSONResponse(content={"message": "welcome user",
-                                 "new_user": user["username"]}, status_code=201)
+    if user.username == "platzi" and user.password == "root":
+        token: str = create_token(user.dict())
+        return JSONResponse(content={"message": "user authorized",
+                                 "username": user.username,
+                                 "token": token}, status_code=201)
+    
+    return JSONResponse(content={"message": "Not Authorized"}, status_code=401)
 
 
 @app.get('/movies', tags=['movies'], response_model=List[Movie], status_code=200)
